@@ -1,0 +1,163 @@
+html{
+  box-sizing: border-box;
+  font-size: 13px;
+  font-family: 'Manrope', sans-serif;
+}
+*,
+*:after
+*:before{
+  box-sizing: inherit;
+}
+:root{
+  --veryDarkBlue: hsl(217, 19%, 35%);
+  --desaturatedDarkBlue: hsl(214, 17%, 51%);
+  --grayishBlue: hsl(212, 23%, 69%);
+  --lightGrayishBlue: hsl(210, 46%, 95%);
+  --whitePrimary: white;
+}
+/* -------------------- GENERALES -------------------- */
+img{
+  max-width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+figure{
+  margin: 0;
+  height: 100%;
+}
+main{
+  background-color: var(--whitePrimary);
+}
+body{
+  padding: 10rem 0;
+  background-color: var(--lightGrayishBlue);
+}
+h4{
+  font-size: 1.5rem;
+}
+p{
+  font-size: 1.2rem;
+}
+.footer{
+  background-color: var(--veryDarkBlue);
+  border-radius: 0 0 10px 10px;
+}
+/* -------------------- HELPERS -------------------- */
+.container{
+  max-width: 85%;
+  margin: 0 auto;
+}
+/* -------------------- BODY -------------------- */
+.card{
+  border-radius: 10px;
+  box-shadow: 10px 10px 100px 10px var(--lightGrayishBlue);
+}
+.card-body{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 2rem;
+  opacity: 0.7;
+}
+/* -------------------- Footer -------------------- */
+.footer-items{
+  display: flex;
+  height: 6rem;
+  margin: 0 auto;
+  max-width: 85%;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-share{
+  letter-spacing: .5rem;
+  color: var(--whitePrimary);
+}
+.perfil-avatar{
+  max-width: 50px;
+  border-radius: 50%;
+  flex-basis: 10%;
+}
+.perfil{
+  flex-basis: 60%;
+  display:flex;
+  flex-direction: column;
+  justify-self: center;
+  align-self: center;
+  line-height: 1.5rem;
+  opacity: .7;
+}
+.perfil + .icono-share{
+  color: var(--desaturatedDarkBlue);
+  padding: .8rem;
+  border-radius: 50%;
+  background-color: var(--lightGrayishBlue);
+}
+.icono-share{
+  cursor: pointer;
+}
+.footer-share .icono-share{
+  color: white;
+  opacity: 1;
+  background-color: var(--desaturatedDarkBlue);
+  border-radius: 50%;
+  padding: .8rem;
+  letter-spacing: 0;
+}
+.iconos,
+.icono-share i{
+  font-size: 1.5rem;
+}
+.iconos{
+  justify-self: flex-start;
+  flex-basis: 60%;
+}
+.footer-no-activo{
+  display: none;
+}
+@media screen and (min-width: 50rem){
+  body{
+    padding: 15rem;
+  }
+  img{
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+  }
+  .card{
+    max-width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) repeat(4, 1fr);
+    grid-template-rows: 9rem 9rem 8rem;
+    grid-template-areas: 
+    "image image image body body body body"
+    "image image image body body body body"
+    "image image image perfil perfil perfil perfil";
+  }
+  .header{
+    grid-area: image;
+  }
+  .card-body{
+    grid-area: body;
+  }
+  h4, p{
+    margin: 1.5rem 0 0 0;
+  }
+  footer{
+    grid-area: perfil;
+  }
+  .perfil-avatar{
+    max-width: 50px;
+    height: 50px;
+    object-fit: unset;
+  }
+  .card-body{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .footer-items{
+    height: 100%;
+  }
+  .footer{
+    border-radius: 0 0 10px 0;
+  }
+}
